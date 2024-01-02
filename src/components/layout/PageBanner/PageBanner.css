@@ -6,13 +6,31 @@
     transform: translateY(-10%);
   }
   100% {
-    transform: translateY(25%);
+    transform: translateY(18px);
+  }
+}
+
+@keyframes moveBannerTextAnimationTopDesktop {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(25px);
   }
 }
 
 .moveBannerTextTop {
   transform: translateY(100%);
   animation: moveBannerTextAnimationTop 0.7s 0.5s forwards ease;
+}
+
+@media (min-width: 1024px) {
+  .moveBannerTextTop {
+    animation: moveBannerTextAnimationTopDesktop 0.7s 0.5s forwards ease;
+  }
 }
 
 @keyframes moveBannerTextAnimationBottom {
@@ -23,13 +41,31 @@
     transform: translateY(10%);
   }
   100% {
-    transform: translateY(-25%);
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes moveBannerTextAnimationBottomDesktop {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-25px);
   }
 }
 
 .moveBannerTextBottom {
   transform: translateY(-100%);
   animation: moveBannerTextAnimationBottom 0.7s 0.5s forwards ease;
+}
+
+@media (min-width: 1024px) {
+  .moveBannerTextBottom {
+    animation: moveBannerTextAnimationBottomDesktop 0.7s 0.5s forwards ease;
+  }
 }
 
 @keyframes moveBannerOverfolowAnimation {

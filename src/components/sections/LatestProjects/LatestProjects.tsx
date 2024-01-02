@@ -1,8 +1,8 @@
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
-import { ProjectCard } from "./ProjectCard";
 import { GotToButton } from "~/components/buttons/GoToButton";
-import { Accessor, Resource, createSignal, onMount } from "solid-js";
+import { Accessor, createSignal } from "solid-js";
 import { Project } from "~/types";
+import { ProjectCard } from "~/components/lists/ProjectCard";
 
 type Props = {
   projects: Accessor<Project[] | undefined>;

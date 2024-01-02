@@ -1,12 +1,12 @@
-interface Props {
+type Props = {
   title: string;
   description: string;
   coverImageUrl: string;
-}
+};
 
 export const ProjectCard = (props: Props) => {
   return (
-    <div class="bg-blue-500 w-full h-[600px] flex relative shadow-md">
+    <div class="w-full h-[600px] flex relative shadow-md">
       <img
         class="w-full h-full object-cover absolute top-0 left-0"
         src={props.coverImageUrl}

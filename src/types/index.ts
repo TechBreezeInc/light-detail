@@ -1,3 +1,8 @@
+export enum ProjectType {
+  COMMERCIAL = "commercial",
+  RESIDENTIAL = "residential",
+  VISUALIZATION = "visualisation",
+}
 export interface Project {
   id: string;
   coverImageUrl: string;
@@ -7,7 +12,7 @@ export interface Project {
   latestPosition: number;
   tags: string[];
   title: string;
-  type: string;
+  type: ProjectType;
   updatedAt: number;
 }
 

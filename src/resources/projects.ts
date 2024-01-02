@@ -15,3 +15,17 @@ export const getLatestProjects = cache(async () => {
 
   return [];
 }, "latestProjects");
+
+export const getAllProjects = cache(async () => {
+  try {
+    const response = await server.get<{ projects?: Project[] }>(
+      "/projects/all"
+    );
+
+    if (response.data?.projects) return response.data.projects;
+  } catch (error) {
+    console.error(error);
+  }
+
+  return [];
+}, "allProjects");
