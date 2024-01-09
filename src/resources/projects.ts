@@ -4,8 +4,6 @@ import { Project } from "~/types";
 
 export const getLatestProjects = cache(async () => {
   try {
-    console.log("getLatestProjects");
-
     const response = await server.get<{ projects?: Project[] }>(
       "/projects/latest"
     );

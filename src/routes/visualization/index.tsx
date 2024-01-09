@@ -1,5 +1,5 @@
 import { createAsync } from "@solidjs/router";
-import { Show, createEffect, createMemo, onMount } from "solid-js";
+import { Show, createMemo } from "solid-js";
 import { Page } from "~/components/layout/Page";
 import { VisualizationPortfolio } from "~/components/sections/VisualizationPortfolio";
 import { getProjectsByType } from "~/resources/projects";

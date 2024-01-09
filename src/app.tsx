@@ -9,6 +9,7 @@ import { Header } from "./components/layout/Header";
 import "./app.css";
 import { useIsMobile } from "./utils/viewport";
 import { MobileMenu } from "./components/navigation/MobileMenu";
+import { ImgPreview } from "./components/img-preview";
 
 export default function App() {
   const isMobile = useIsMobile();
@@ -30,6 +31,7 @@ export default function App() {
 
             <Footer />
           </div>
+          <ImgPreview />
         </>
       )}
     >

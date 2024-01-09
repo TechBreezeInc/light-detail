@@ -1,4 +1,5 @@
 import { For } from "solid-js";
+import { setPreviewImg } from "~/components/img-preview";
 import { PageBanner } from "~/components/layout/PageBanner/PageBanner";
 import { Section } from "~/components/layout/Section";
 import { Project } from "~/types";
@@ -30,7 +31,11 @@ export const ProjectPage = (props: Props) => {
           <For each={props.project.imgs}>
             {(img) => (
               <div class="flex-1 overflow-hidden aspect-square min-w-full lg:min-w-[40%] shadow-md">
-                <img class="w-full h-full object-cover" src={img} />
+                <img
+                  onClick={() => setPreviewImg(img)}
+                  class="w-full h-full object-cover cursor-pointer"
+                  src={img}
+                />
               </div>
             )}
           </For>
