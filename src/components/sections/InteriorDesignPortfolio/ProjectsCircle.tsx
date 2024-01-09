@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useIsFixedPosition } from "./utils";
+import { useIsFixedPosition } from "~/utils/viewport";
 
 type Props = {
   left?: boolean;

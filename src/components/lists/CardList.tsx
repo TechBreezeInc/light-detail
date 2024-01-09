@@ -3,8 +3,12 @@ import { ProjectCard } from "./ProjectCard";
 import { Project } from "~/types";
 import clsx from "clsx";
 
+export interface ProjectCardProps extends Project {
+  path: string;
+}
+
 type Props = {
-  list: Project[];
+  list: ProjectCardProps[];
 };
 
 export const CardList = (props: Props) => (

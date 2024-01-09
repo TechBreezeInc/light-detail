@@ -1,5 +1,5 @@
 import { createAsync } from "@solidjs/router";
-import { Index, createSignal } from "solid-js";
+import { For, Index, createEffect, createSignal } from "solid-js";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
 import { StaffCard } from "~/components/sections/Staff/StaffCard";
@@ -28,9 +28,9 @@ export default function About() {
           ref={setDivRef1}
           class="flex flex-col px-6 m-auto flex-1 max-w-6xl py-8 lg:py-16 gap-8 lg:gap-16"
         >
-          <Index each={data()}>
-            {(staffMember) => <StaffCard staffMember={staffMember} />}
-          </Index>
+          <For each={data()}>
+            {(staffMember) => <StaffCard {...staffMember} />}
+          </For>
         </div>
       </div>
       <div ref={setDivRef2} />

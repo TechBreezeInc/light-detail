@@ -40,9 +40,9 @@ export const routes: Route[] = [
     label: "visualization",
     path: "/visualization",
     img: "/img/cover.jpg",
-    title: "our|mission",
+    title: "visualization|portfolio",
     subTitle:
-      "iDesign Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
+      "3D renderings are a photorealistic way of understanding an architectural plan, a construction drawing or something that does not exist yet, an idea or a concept.",
   },
   {
     id: "services",

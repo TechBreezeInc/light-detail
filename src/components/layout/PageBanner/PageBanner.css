@@ -6,7 +6,7 @@
     transform: translateY(-10%);
   }
   100% {
-    transform: translateY(18px);
+    transform: translateY(13px);
   }
 }
 
@@ -41,7 +41,7 @@
     transform: translateY(10%);
   }
   100% {
-    transform: translateY(-18px);
+    transform: translateY(-13px);
   }
 }
 

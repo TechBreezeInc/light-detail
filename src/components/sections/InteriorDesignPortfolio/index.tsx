@@ -1,12 +1,12 @@
-import { Accessor, Show, createSignal } from "solid-js";
-import { CardList } from "~/components/lists/CardList";
+import { Show, createSignal } from "solid-js";
+import { CardList, ProjectCardProps } from "~/components/lists/CardList";
 import { Project, ProjectType } from "~/types";
 import { ProjectListHeader } from "./ProjectListHeader";
 import { ProjectCircle } from "./ProjectsCircle";
 import { Transition } from "solid-transition-group";
 
 type Props = {
-  list: Project[];
+  list: ProjectCardProps[];
 };
 
 export const InteriorDesignPortfolio = (props: Props) => {

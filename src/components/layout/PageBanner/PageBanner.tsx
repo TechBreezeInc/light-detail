@@ -1,19 +1,20 @@
 import clsx from "clsx";
 import "./PageBanner.css";
+import { Show } from "solid-js";
 
 type Props = {
   id: string;
   img: string;
   title: string;
-  subTitle: string;
+  subTitle?: string;
 };
 
 export const PageBanner = (props: Props) => {
-  const splitTitle = props.title.split("|");
+  const splitTitle = () => props.title.split("|");
 
   const getTextSize = (text: string) => {
     if (text.length > 7) {
-      return "text-6xl";
+      return "text-4xl";
     }
 
     return "text-7xl";
@@ -38,10 +39,10 @@ export const PageBanner = (props: Props) => {
             <h1
               class={clsx(
                 "uppercase text-center text-yellow-500 lg:text-8xl font-semibold text-shadow moveBannerTextTop",
-                getTextSize(splitTitle[0])
+                getTextSize(splitTitle()[0])
               )}
             >
-              {splitTitle[0]}
+              {splitTitle()[0]}
             </h1>
           </div>
           <div class="bg-white w-full h-[4px] rounded-md scaleDivider" />
@@ -49,19 +50,21 @@ export const PageBanner = (props: Props) => {
             <h1
               class={clsx(
                 "uppercase text-center text-white lg:text-8xl font-semibold text-shadow z-10 relative moveBannerTextBottom",
-                getTextSize(splitTitle[1])
+                getTextSize(splitTitle()[1])
               )}
             >
-              {splitTitle[1]}
+              {splitTitle()[1]}
             </h1>
           </div>
         </div>
 
-        <div class="translate-y-[-0px] lg:translate-y-[-20px] fadeIn">
-          <p class="text-center text-white text-2xl font-thin">
-            {props.subTitle}
-          </p>
-        </div>
+        <Show when={props.subTitle}>
+          <div class="translate-y-[-0px] lg:translate-y-[-20px] fadeIn">
+            <p class="text-center text-white text-xl lg:text-2xl font-thin">
+              {props.subTitle}
+            </p>
+          </div>
+        </Show>
       </div>
     </section>
   );

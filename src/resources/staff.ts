@@ -3,6 +3,8 @@ import { server } from "./server";
 import { cache } from "@solidjs/router";
 
 export const getStaff = cache(async () => {
+  console.log("Fetching staff");
+
   try {
     const response = await server.get<{ staffMembers?: StaffMember[] }>(
       "/staff"
