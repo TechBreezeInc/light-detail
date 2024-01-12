@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { CardList, ProjectCardProps } from "~/components/lists/CardList";
 import { useIsFixedPosition } from "~/utils/viewport";
+import { ProjectCircle } from "../InteriorDesignPortfolio/ProjectsCircle";
 
 type Props = {
   list: ProjectCardProps[];
@@ -11,6 +12,7 @@ export const VisualizationPortfolio = (props: Props) => {
 
   return (
     <div class="flex relative overflow-hidden lg:px-60 pb-32">
+      <ProjectCircle />
       <div
         class={clsx(
           "top-0 left-0 flex w-full px-6 lg:px-60 z-20 bg-gradient-to-b from-20% from-white ",

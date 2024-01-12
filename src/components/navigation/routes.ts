@@ -48,10 +48,10 @@ export const routes: Route[] = [
     id: "services",
     label: "services",
     path: "/services",
-    img: "/img/cover.jpg",
-    title: "our|mission",
+    img: "/img/services.png",
+    title: "our|services",
     subTitle:
-      "iDesign Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
+      "We design homes that mirrors and shelters each and every lifestyle.",
   },
   {
     id: "contact",

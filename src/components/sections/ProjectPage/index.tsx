@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import { setPreviewImg } from "~/components/img-preview";
 import { PageBanner } from "~/components/layout/PageBanner/PageBanner";
 import { Section } from "~/components/layout/Section";
+import { SectionHeader } from "~/components/layout/Section/SectionHeader";
 import { Project } from "~/types";
 
 type Props = {
@@ -21,11 +22,12 @@ export const ProjectPage = (props: Props) => {
         subTitle={""}
       />
       <Section>
-        <div class="flex gap-4 flex-col lg:flex-row lg:items-start lg:gap-6">
-          <h2 class="text-4xl">Description</h2>
-          <div class="h-2 border-b-4 lg:border-r-4 border-black lg:self-stretch lg:h-[unset]" />
-          <p class="text-gray-500 lg:pt-16">{props.project.description}</p>
-        </div>
+        <SectionHeader
+          title="Description"
+          subTitle={
+            props.project.description || `Picture of ${props.project.title}`
+          }
+        />
 
         <div class="flex flex-wrap gap-6">
           <For each={props.project.imgs}>

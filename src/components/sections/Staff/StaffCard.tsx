@@ -18,7 +18,7 @@ export const StaffCard = (props: Props) => {
       </div>
       <div class="flex flex-col gap-2 flex-1 ">
         <p>{props.description}</p>
-        <p class="text-gray-400">- {props.author}</p>
+        <p class="text-gray-500">- {props.author}</p>
       </div>
     </div>
   );

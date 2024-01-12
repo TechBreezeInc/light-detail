@@ -25,7 +25,7 @@ export const Footer = () => {
         <p>Address: Ludwing van Beethoven, nr.29a, Cluj-Napoca, Romania</p>
         <p>Mail: bianca.cimpean@lightdetail.eu</p>
       </div>
-      <div class="flex flex-col ml-auto">
+      <div class="flex flex-col lg:ml-auto">
         <p>develop by</p>
         <img src="/svg/logoTechBreeze.svg" class="w-[105px] h-[35px]" />
       </div>

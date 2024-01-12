@@ -13,7 +13,7 @@ export const PageBanner = (props: Props) => {
   const splitTitle = () => props.title.split("|");
 
   const getTextSize = (text: string) => {
-    if (text.length > 7) {
+    if (text.length > 8) {
       return "text-4xl";
     }
 

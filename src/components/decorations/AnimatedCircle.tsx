@@ -62,7 +62,6 @@ export const AnimatedCircle = (props: {
           "w-[180%] pb-[180%] lg:w-full lg:pb-[100%] top-0 left-0 -translate-x-1/2 -translate-y-1/2",
         "absolute bg-gray-200 rounded-full -z-10 scale-0 transition-transform duration-700",
         visibility() && "scale-100"
-        // "scale-100"
       )}
     />
   );
