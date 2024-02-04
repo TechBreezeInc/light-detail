@@ -6,6 +6,7 @@ import { For, createSignal } from "solid-js";
 import { ProposalCard } from "~/components/sections/Services/ProposalCard";
 import { proposals } from "~/components/sections/Services/proposals";
 import { VisualizationsServices } from "~/components/sections/Services/VisualizationsServices";
+import { CollaborationFlow } from "~/components/sections/CollaborationFlow";
 
 export default function Services() {
   const [divRef, setDivRef] = createSignal<HTMLDivElement | null>(null);
@@ -13,6 +14,7 @@ export default function Services() {
   return (
     <Page id="services">
       <Section
+        class="pt-8 lg:mb-28"
         decorations={
           <div
             class="absolute top-1 left-0 w-full h-full -z-10"
@@ -28,13 +30,14 @@ export default function Services() {
             the past years we figured the need to design 3 types of
             deals/offers/packages/proposals according to your needs:"
         />
-        <div class="flex flex-col gap-6 lg:flex-row">
+        <div class="flex flex-col gap-6 lg:flex-row pb-4">
           <For each={proposals}>
             {(proposal) => <ProposalCard {...proposal} />}
           </For>
         </div>
       </Section>
       <VisualizationsServices />
+      <CollaborationFlow />
     </Page>
   );
 }

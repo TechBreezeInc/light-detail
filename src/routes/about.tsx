@@ -1,5 +1,5 @@
 import { createAsync } from "@solidjs/router";
-import { For, Index, createEffect, createSignal } from "solid-js";
+import { For, createSignal } from "solid-js";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
 import { StaffCard } from "~/components/sections/Staff/StaffCard";

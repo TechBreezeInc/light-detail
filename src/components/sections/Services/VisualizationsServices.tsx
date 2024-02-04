@@ -8,7 +8,7 @@ export const VisualizationsServices = () => {
   return (
     <section
       onClick={() => setFlip(!flip())}
-      class="w-full flex relative h-screen max-h-[600px] overflow-hidden lg:px-48 lg:mb-[100px] cursor-pointer"
+      class="w-full flex relative h-screen max-h-[600px] overflow-hidden lg:px-48 lg:mb-28 cursor-pointer"
     >
       <div
         class={clsx(
