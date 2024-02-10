@@ -1,7 +1,10 @@
+import { ArrowIcon } from "./arrows-icon";
+
 export const SubmitButton = () => {
   return (
-    <button class="self-end mt-6" type="submit">
-      SEND
+    <button type="submit" class="flex items-center self-end mt-6 z-10">
+      <ArrowIcon />
+      <span class=" ml-2 text-brandYellow">S</span>END
     </button>
   );
 };
