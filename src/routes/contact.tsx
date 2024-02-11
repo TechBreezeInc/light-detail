@@ -1,10 +1,8 @@
-import { createAsync } from "@solidjs/router";
-import { For, createSignal } from "solid-js";
-import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
 import { Section } from "~/components/layout/Section";
 import { ContactForm } from "~/components/sections/Contact/ContactForm";
-import { StaffCard } from "~/components/sections/Staff/StaffCard";
+import { clientOnly } from "@solidjs/start";
+const GoogleMaps = clientOnly(() => import("~/components/google-maps"));
 
 import { getStaff } from "~/resources/staff";
 
@@ -46,6 +44,7 @@ export default function Contact() {
         </div>
         <ContactForm />
       </Section>
+      <GoogleMaps />
     </Page>
   );
 }
