@@ -39,7 +39,7 @@ export const routes: Route[] = [
     id: "visualization",
     label: "visualization",
     path: "/visualization",
-    img: "/img/cover.jpg",
+    img: "/img/visualisation1.jpg",
     title: "visualization|portfolio",
     subTitle:
       "3D renderings are a photorealistic way of understanding an architectural plan, a construction drawing or something that does not exist yet, an idea or a concept.",
