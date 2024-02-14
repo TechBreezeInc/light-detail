@@ -1,22 +1,27 @@
 import { SendEmailParams, SendEmailResponse } from "~/api/types";
 import emailjs from "emailjs-com";
 
+const emailService = import.meta.env.VITE_EMAIL_JS_SERVICE;
+const formTemplate = import.meta.env.VITE_EMAIL_JS_FORM;
+const emailServiceUser = import.meta.env.VITE_EMAIL_JS_USER;
+const toEmail = import.meta.env.VITE_EMAIL_JS_RECEIVER;
+
 export const sendEmail = (
   params: SendEmailParams
 ): Promise<SendEmailResponse> =>
   new Promise((resolve, reject) => {
     emailjs
       .send(
-        "service_q49d5np",
-        "contact_form",
+        emailService,
+        formTemplate,
         {
           name: params.name,
           mail: params.email,
           subject: params.subject,
           message: params.content,
-          to_email: "stefan.radusi@tech-breeze.com",
+          to_email: toEmail,
         },
-        "user_xlyLUbENywvyi5Vh77nQj"
+        emailServiceUser
       )
       .then(
         (result) => {
