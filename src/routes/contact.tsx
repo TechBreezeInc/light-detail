@@ -5,16 +5,27 @@ import { clientOnly } from "@solidjs/start";
 const GoogleMaps = clientOnly(() => import("~/components/google-maps"));
 
 import { getStaff } from "~/resources/staff";
+import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
+import { createSignal } from "solid-js";
 
 export const route = {
   load: () => getStaff(),
 };
 
 export default function Contact() {
+  const [divRef, setDivRef] = createSignal<HTMLDivElement | null>(null);
+
   return (
     <Page id="contact">
-      <Section>
-        <div class="flex gap-4 flex-col my-14 lg:flex-row lg:items-start lg:gap-6">
+      <Section
+        decorations={
+          <AnimatedCircle divRef={divRef} options={{ threshold: 0.3 }} />
+        }
+      >
+        <div
+          ref={setDivRef}
+          class="flex gap-4 flex-col my-14 lg:flex-row lg:items-start lg:gap-6"
+        >
           <div class="flex flex-col min-w-[300px]">
             <h2 class="text-4xl mb-2">LIGHT DETAIL</h2>
             <p>

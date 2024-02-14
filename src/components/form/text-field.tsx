@@ -13,13 +13,13 @@ export const TextField = (props: TextFieldProps) => {
     <div class="relative">
       <div
         class={clsx(
-          "flex border-b gap-4 pt-4 pb-2 mb-2 text-lg",
+          "flex border-b gap-4 pt-4 pb-2 mb-2 text-lg border-gray-300",
           props.errorMsg && "border-red-600"
         )}
       >
         <label>{props.label}</label>
         <input
-          class="text-gray-500 outline-none flex-1"
+          class="text-gray-500 outline-none flex-1 bg-transparent"
           value={props.value ?? ""}
           onInput={props.onInput}
         />

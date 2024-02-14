@@ -13,14 +13,14 @@ export const TextArea = (props: TextAreaProps) => {
     <div class="relative">
       <div
         class={clsx(
-          "flex flex-col border-b gap-2 pt-4 pb-2 mb-2",
+          "flex flex-col text-lg border-b gap-2 pt-4 pb-2 mb-2 border-gray-300",
           props.errorMsg && "border-red-600"
         )}
       >
         <label>{props.label}</label>
         <textarea
           value={props.value ?? ""}
-          class="h-20 outline-none text-gray-500"
+          class="h-20 outline-none text-gray-500  bg-transparent text-lg"
           onInput={props.onInput}
         />
       </div>
