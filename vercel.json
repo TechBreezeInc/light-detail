@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/admin(.*)",
+      "destination": "http://d26c28omgv4lep.cloudfront.net/admin$1"
+    }
+  ]
+}
