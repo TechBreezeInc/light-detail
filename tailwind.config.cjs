@@ -12,6 +12,9 @@ module.exports = {
       boxShadow: {
         md: " 0 2px 10px 2px rgba(0,0,0,0.4)",
       },
+      spacing: {
+        unset: "unset",
+      },
     },
     fontFamily: {
       sans: ["Futura", "Hind", "Arial", "sans-serif"],

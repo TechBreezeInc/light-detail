@@ -19,13 +19,13 @@ export const StepCard = (props: Props) => {
   return (
     <div
       class={clsx(
-        "flex mt-10 last:mb-32",
+        "flex flex-col mt-10 last:mb-32 lg:flex-row",
         props.textPosition === StepCardTextPosition.RIGHT
-          ? "flex-row"
-          : "flex-row-reverse"
+          ? "lg:flex-row"
+          : "lg:flex-row-reverse"
       )}
     >
-      <div class="flex-1">
+      <div class="flex-1 mb-5 lg:mb-0">
         <Show when={props.showHeaderTitle}>
           <h3 class="text-3xl font-bold">
             <span class="text-brandYellow">SO,</span> WHAT IF WE <br /> WORK
@@ -33,24 +33,27 @@ export const StepCard = (props: Props) => {
           </h3>
         </Show>
       </div>
-      <div class="w-[150px] aspect-square overflow-hidden rounded-md shadow-md">
-        <img class="w-full h-full object-cover" src={props.img} />
+      <div class="mb-5 lg:mb-0 w-full h-32 lg:w-[150px] lg:h-auto lg:aspect-square overflow-hidden rounded-md shadow-md">
+        <img
+          class="w-full h-full object-cover object-bottom lg:object-center"
+          src={props.img}
+        />
       </div>
-      <div class="flex-1 relative">
+      <div class="flex-1 relative ">
         <div
           class={clsx(
-            "absolute bottom-0 left-0  w-full",
+            "lg:absolute bottom-0 left-0  w-full flex flex-col gap-3",
             props.textPosition === StepCardTextPosition.RIGHT
-              ? "pl-[70px]"
-              : "pr-[70px] text-right"
+              ? "lg:pl-[70px]"
+              : "lg:pr-[70px] lg:text-right"
           )}
         >
           <p
             class={clsx(
-              "absolute bottom-[35px] text-3xl -rotate-90 font-bold",
+              "lg:absolute -top-10 lg:top-unset lg:bottom-[35px] text-3xl lg:-rotate-90 font-bold ",
               props.textPosition === StepCardTextPosition.RIGHT
-                ? "-left-[15px]"
-                : "-right-[15px]"
+                ? "lg:-left-[15px]"
+                : "lg:-right-[15px]"
             )}
           >
             {props.title}

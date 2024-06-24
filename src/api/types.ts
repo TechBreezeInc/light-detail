@@ -5,4 +5,4 @@ export type SendEmailParams = {
   content: string;
 };
 
-export type SendEmailResponse = string;
+export type SendEmailResponse = { msg: string };
