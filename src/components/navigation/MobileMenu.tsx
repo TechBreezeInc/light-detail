@@ -60,15 +60,17 @@ export const MobileMenu = () => {
           hideMenuList() && "translate-x-0"
         )}
       >
-        {routes.map(({ path, label }) => (
-          <GotToButton
-            to={path}
-            label={label}
-            selected={() => location.pathname === path}
-            color="white"
-            fullHighlight
-          />
-        ))}
+        {routes
+          .filter((route) => !route.excludeFromNav)
+          .map(({ path, label }) => (
+            <GotToButton
+              to={path}
+              label={label}
+              selected={() => location.pathname === path}
+              color="white"
+              fullHighlight
+            />
+          ))}
       </div>
     </nav>
   );

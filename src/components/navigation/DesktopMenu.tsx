@@ -43,16 +43,18 @@ export const DesktopMenu = () => {
         position()
       )}
     >
-      {routes.map(({ id, path, label }) => (
-        <li>
-          <NavigationButton
-            pageId={id}
-            to={path}
-            label={label}
-            selected={() => location.pathname === path}
-          />
-        </li>
-      ))}
+      {routes
+        .filter((route) => !route.excludeFromNav)
+        .map(({ id, path, label }) => (
+          <li>
+            <NavigationButton
+              pageId={id}
+              to={path}
+              label={label}
+              selected={() => location.pathname === path}
+            />
+          </li>
+        ))}
     </nav>
   );
 };

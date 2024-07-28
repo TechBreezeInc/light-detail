@@ -5,6 +5,7 @@ export type Route = {
   img: string;
   title: string;
   subTitle: string;
+  excludeFromNav?: boolean;
 };
 
 export const routes: Route[] = [
@@ -30,7 +31,7 @@ export const routes: Route[] = [
     id: "interior_design",
     label: "interior design",
     path: "/interior-design",
-    img: "/img/residential.jpg",
+    img: "/img/residential-new.jpg",
     title: "interior design|portfolio",
     subTitle:
       "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
@@ -61,5 +62,25 @@ export const routes: Route[] = [
     title: "contact|us",
     subTitle:
       "We design homes that mirrors and shelters each and every lifestyle.",
+  },
+  {
+    id: "termsOfService",
+    label: "Terms of Service",
+    path: "/terms-of-service",
+    img: "/img/residential.jpg",
+    title: "Terms of|Service",
+    subTitle:
+      "Welcome to Light Detail. These Terms of Service (“Terms”) govern your use of our website and services. By accessing or using our website and services, you agree to be bound by these Terms.",
+    excludeFromNav: true,
+  },
+  {
+    id: "privacyPolicy",
+    label: "Privacy Policy",
+    path: "/privacy-policy",
+    img: "/img/residential.jpg",
+    title: "Privacy|Policy",
+    subTitle:
+      "Welcome to Light Detail. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and protect your information when you use our contact form.",
+    excludeFromNav: true,
   },
 ];

@@ -16,8 +16,8 @@ export const Footer = () => {
       </div>
       <div class="flex flex-col gap-3">
         <p class="font-bold">Legal</p>
-        <A href="/services#offers">Terms and conditions</A>
-        <A href="/services#steps">Privacy statement</A>
+        <A href="/terms-of-service">Terms of Service</A>
+        <A href="/privacy-policy">Privacy Policy</A>
       </div>
       <div class="flex flex-col gap-3">
         <p class="font-bold">Contact</p>
