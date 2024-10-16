@@ -16,7 +16,7 @@ export const routes: Route[] = [
     img: "/img/cover.jpg",
     title: "our|mission",
     subTitle:
-      "iDesign Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
+      "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
   },
   {
     id: "about",
