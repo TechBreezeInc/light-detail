@@ -1,7 +1,18 @@
 "use server";
 
 import { Resend } from "resend";
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
+// Server-only module ("use server") – we can rely solely on process.env
+// Add a lightweight accessor mainly to enable an inline warning.
+const env = (key: string): string | undefined => process.env[key];
+
+const resendApiKey = env("RESEND_API_KEY");
+if (!resendApiKey) {
+  console.warn(
+    "[sendEmail] Missing RESEND_API_KEY env variable – emails will fail."
+  );
+}
+const resend = new Resend(resendApiKey);
 
 import { SendEmailParams, SendEmailResponse } from "./types";
 
@@ -28,12 +39,13 @@ export const sendEmail = async (
     muted: "#555555",
   };
 
-  const internalRecipients = (
-    import.meta.env.CONTACT_TO || "radusi.stefan@gmail.com"
-  )
+  const internalRecipients = (env("CONTACT_TO") || "radusi.stefan@gmail.com")
     .split(/[;,]/)
     .map((s: string) => s.trim())
     .filter(Boolean);
+  if (!env("CONTACT_TO")) {
+    console.warn("[sendEmail] CONTACT_TO not set – using fallback recipient.");
+  }
 
   const html = `
     <table width="100%" cellpadding="0" cellspacing="0" style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #eee;border-radius:8px;overflow:hidden">
