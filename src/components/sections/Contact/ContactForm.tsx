@@ -1,3 +1,4 @@
+import { sendEmail } from "~/api";
 import { SendEmailParams, SendEmailResponse } from "~/api/types";
 import { Form } from "~/components/form";
 import { useForm } from "~/components/form/signals";
@@ -5,7 +6,6 @@ import { SubmitButton } from "~/components/form/submit-button";
 import { TextArea } from "~/components/form/text-area";
 import { TextField } from "~/components/form/text-field";
 import { isEmail, isRequired } from "~/components/form/validations";
-import { sendEmail } from "./email-service";
 
 export const ContactForm = () => {
   const form = useForm();

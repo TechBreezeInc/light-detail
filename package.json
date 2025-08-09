@@ -13,8 +13,8 @@
     "autoprefixer": "^10.4.14",
     "axios": "^1.6.3",
     "clsx": "^2.0.0",
-    "emailjs-com": "^3.2.0",
     "postcss": "^8.4.26",
+    "resend": "^6.0.1",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.8.7",
     "solid-transition-group": "^0.2.3",
@@ -22,7 +22,7 @@
     "vinxi": "0.0.54"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "devDependencies": {
     "@types/google.maps": "^3.55.2"
