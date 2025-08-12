@@ -1,15 +1,15 @@
 import { A } from "@solidjs/router";
 
 type Props = {
-  title: string;
-  description: string;
-  coverImageUrl: string;
-  path: string;
+  title?: string;
+  description?: string;
+  coverImageUrl?: string;
+  path?: string;
 };
 
 export const ProjectCard = (props: Props) => {
   return (
-    <A href={props.path}>
+    <A href={props.path ?? ""}>
       <div class="w-full h-[600px] flex relative shadow-md">
         <img
           class="w-full h-full object-cover absolute top-0 left-0"
