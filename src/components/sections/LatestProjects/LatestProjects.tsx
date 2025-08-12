@@ -15,7 +15,7 @@ export const LatestProjects = (props: Props) => {
     console.log(props.projects);
   });
 
-  const getProjectByIndex = (index: number) => props.projects[index];
+  const getProjectByIndex = (index: number) => props.projects[index] ?? {};
 
   return (
     <Show when={props.projects.length}>
