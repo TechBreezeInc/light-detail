@@ -1,6 +1,6 @@
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { GotToButton } from "~/components/buttons/GoToButton";
-import { Show, createSignal } from "solid-js";
+import { Show, createEffect, createSignal } from "solid-js";
 import { ProjectCard } from "~/components/lists/ProjectCard";
 import { ProjectCardProps } from "~/components/lists/CardList";
 
@@ -10,6 +10,10 @@ type Props = {
 
 export const LatestProjects = (props: Props) => {
   const [divRef, setDivRef] = createSignal<HTMLDivElement | null>(null);
+
+  createEffect(() => {
+    console.log(props.projects);
+  });
 
   const getProjectByIndex = (index: number) => props.projects[index];
 

@@ -36,15 +36,15 @@ export const routes: Route[] = [
     subTitle:
       "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
   },
-  {
-    id: "visualization",
-    label: "visualization",
-    path: "/visualization",
-    img: "/img/visualisation1.jpg",
-    title: "visualization|portfolio",
-    subTitle:
-      "3D renderings are a photorealistic way of understanding an architectural plan, a construction drawing or something that does not exist yet, an idea or a concept.",
-  },
+  // {
+  //   id: "visualization",
+  //   label: "visualization",
+  //   path: "/visualization",
+  //   img: "/img/visualisation1.jpg",
+  //   title: "visualization|portfolio",
+  //   subTitle:
+  //     "3D renderings are a photorealistic way of understanding an architectural plan, a construction drawing or something that does not exist yet, an idea or a concept.",
+  // },
   {
     id: "services",
     label: "services",

@@ -29,14 +29,14 @@ export const ProjectListHeader = (props: Props) => {
         <div
           class={clsx(
             "absolute top-0 left-0 w-1/2 h-full overflow-hidden transition-transform duration-300",
-            isSelected(ProjectType.COMMERCIAL)
+            isSelected(ProjectType.RESIDENTIAL)
               ? "translate-x-0"
               : "translate-x-full"
           )}
         >
           <div class="bg-gray-200 absolute bottom-0 left-1/2 w-full pt-[100%] -translate-x-1/2 rounded-full" />
         </div>
-        {[ProjectType.COMMERCIAL, ProjectType.RESIDENTIAL].map((tab) => (
+        {[ProjectType.RESIDENTIAL, ProjectType.COMMERCIAL].map((tab) => (
           <button
             class={clsx(
               "w-1/2 z-10 transition-colors duration-300 font-bold",

@@ -17,7 +17,7 @@ export const ProjectCard = (props: Props) => {
           alt={props.title}
         />
         <div class="flex-1 h-full z-10 overflow-hidden group relative">
-          <p class="w-full h-full overflow-auto no-scrollbar bg-black/70 p-6 text-white translate-x-full transition-transform duration-500 group-hover:translate-x-0">
+          <p class="w-full h-full overflow-hidden no-scrollbar bg-black/70 p-6 text-white translate-x-full transition-transform duration-500 group-hover:translate-x-0">
             {props.description}
           </p>
           <div class="w-full h-[100px] absolute left-0 bottom-0 bg-gradient-to-t from-black" />

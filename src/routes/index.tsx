@@ -3,7 +3,7 @@ import { WorkFlow } from "~/components/sections/WorkFlow/WorkFlow";
 import { getLatestProjects } from "~/resources/projects";
 import { createAsync } from "@solidjs/router";
 import { Page } from "~/components/layout/Page";
-import { Show, createMemo } from "solid-js";
+import { Show } from "solid-js";
 
 export const route = {
   load: () => getLatestProjects(),
@@ -15,12 +15,11 @@ export default function Home() {
     initialValue: [],
   });
 
-  const getDataWithPath = createMemo(() =>
+  const getDataWithPath = () =>
     data()?.map((project) => ({
       ...project,
       path: `/interior-design/${project.id}`,
-    }))
-  );
+    }));
 
   return (
     <Page id="home">
