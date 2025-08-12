@@ -1,6 +1,6 @@
 // @refresh reload
 import { Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start";
+import { FileRoutes } from "@solidjs/start/router";
 import { Show, Suspense } from "solid-js";
 import { DesktopMenu } from "./components/navigation/DesktopMenu";
 import { Footer } from "./components/layout/Footer";
