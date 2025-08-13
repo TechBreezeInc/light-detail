@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import "./PageBanner.css";
-import { Show, onMount, createSignal, onCleanup } from "solid-js";
+import { Show, onMount, createSignal, onCleanup, createEffect } from "solid-js";
 
 type Props = {
   id: string;
@@ -24,42 +24,41 @@ export const PageBanner = (props: Props) => {
     return "text-7xl";
   };
 
-  const handleVideoLoad = (video: HTMLVideoElement) => {
-    setVideoRef(video);
-
-    // Ensure video plays when loaded
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch (error) {
-        // If autoplay fails, try again after a short delay
-        setTimeout(() => {
-          video.play().catch(() => {
-            // If still failing, we can't do much more
-          });
-        }, 100);
-      }
-    };
-
-    // Play immediately if possible
-    if (video.readyState >= 3) {
-      playVideo();
-    } else {
-      video.addEventListener("canplay", playVideo, { once: true });
+  const playVideo = async (video: HTMLVideoElement) => {
+    try {
+      await video.play();
+    } catch (error) {
+      // If autoplay fails, try again after a short delay
+      setTimeout(() => {
+        video.play().catch(() => {
+          // If still failing, we can't do much more
+        });
+      }, 100);
     }
   };
 
-  // Handle page visibility changes to restart video
+  const handleVideoLoad = (video: HTMLVideoElement) => {
+    setVideoRef(video);
+
+    // Play immediately if possible
+    if (video.readyState >= 3) {
+      playVideo(video);
+    } else {
+      video.addEventListener("canplay", () => playVideo(video), { once: true });
+    }
+  };
+
+  // Handle component mount and visibility changes
   onMount(() => {
+    console.log("mount", props.title);
+
+    // Handle page visibility changes (tab switching, app switching)
     const handleVisibilityChange = () => {
       const video = videoRef();
       if (video && document.visibilityState === "visible") {
-        // Small delay to ensure the page is fully visible
         setTimeout(() => {
           if (video.paused) {
-            video.play().catch(() => {
-              // Ignore errors - some browsers block autoplay
-            });
+            playVideo(video);
           }
         }, 100);
       }
@@ -71,6 +70,18 @@ export const PageBanner = (props: Props) => {
     onCleanup(() => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     });
+  });
+
+  // React to props changes (when navigating to the same component with different props)
+  createEffect(() => {
+    const video = videoRef();
+    if (video && props.vid) {
+      // Small delay to ensure the video sources are updated
+      setTimeout(() => {
+        video.load(); // Reload the video with new sources
+        playVideo(video);
+      }, 50);
+    }
   });
 
   return (
