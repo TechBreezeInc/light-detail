@@ -1,26 +1,107 @@
 export const proposals = [
   {
     id: 1,
-    title: "Proposal 1",
-    img: "/img/proposal1.png",
-    subTitle: "INTERIOR DESIGN PROJECT",
+    title: "Basic Package",
+    img: "/img/basic.webp",
+    subTitle: "Design Essentials",
     description:
-      "- concept, sketches, mood boards, 3D renderings and estimation",
+      "Ideal for clients who want a professionally designed space and prefer to manage the execution themselves.",
+    services: [
+      {
+        type: "basic",
+        text: "Initial consultation",
+      },
+      {
+        type: "basic",
+        text: "Mood boards and concept development",
+      },
+      {
+        type: "basic",
+        text: "Space planning and layout",
+      },
+      {
+        type: "basic",
+        text: "Color scheme and materials suggestions",
+      },
+      {
+        type: "basic",
+        text: "Basic furniture and decor recommendations",
+      },
+      {
+        type: "premium",
+        text: "3D renderings of key spaces",
+      },
+      {
+        type: "premium",
+        text: "Up to 2 office meetings to review and refine the design",
+      },
+    ],
   },
   {
     id: 2,
-    title: "Proposal 2",
-    img: "/img/proposal2.png",
-    subTitle: "INTERIOR DESIGN PROJECT + SITE MANAGEMENT",
+    title: "Basic Plus Package",
+    img: "/img/basic-plus.webp",
+    subTitle: "Design + Support",
     description:
-      "- concept, sketches, mood boards, 3D renderings, estimation, retailer shop visits and site management",
+      "Perfect for those who want a hands-on role in the process but appreciate expert guidance throughout.",
+    descriptionFooter: "Includes everything in the Basic Package, plus:",
+    services: [
+      {
+        type: "basic",
+        text: "On-site supervision during key stages",
+      },
+      {
+        type: "basic",
+        text: "Shopping assistance for materials, furniture, and decor",
+      },
+      {
+        type: "basic",
+        text: "Ongoing email and phone support during implementation",
+      },
+      {
+        type: "premium",
+        text: "Additional 3D renderings for multiple perspectives or alternative layouts",
+      },
+      {
+        type: "premium",
+        text: "Up to 4 office meetings for deeper collaboration and updates",
+      },
+    ],
   },
   {
     id: 3,
-    title: "Proposal 3",
-    img: "/img/proposal3.png",
-    subTitle: "FULL HOUSE",
+    title: "Turnkey Package",
+    img: "/img/turnkey.webp",
+    subTitle: "Full-Service Design",
     description:
-      "- everything from design concept to buying the necessary materials and objects so that you only come in and start enjoying it",
+      "Best for clients looking for a seamless, start-to-finish experience where every detail is taken care of.",
+    descriptionFooter: "Includes everything in the Basic Plus Package, plus:",
+    services: [
+      {
+        type: "basic",
+        text: "Full project management and execution",
+      },
+      {
+        type: "basic",
+        text: "Contractor coordination and timeline management",
+      },
+      {
+        type: "basic",
+        text: "Procurement of furniture, materials, and accessories",
+      },
+      {
+        type: "basic",
+        text: "Final styling and professional staging",
+      },
+      {
+        type: "premium",
+        text: "Comprehensive 3D renderings of all designed areas",
+      },
+      {
+        type: "premium",
+        text: "Unlimited office meetings as needed throughout the project",
+      },
+    ],
+    isBestValue: true,
   },
 ];

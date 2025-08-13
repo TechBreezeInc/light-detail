@@ -25,12 +25,10 @@ export default function Services() {
         }
       >
         <SectionHeader
-          title="CHECK OUT OUR OFFERS"
-          subTitle="We mainly offer interior design services, but at your request over
-            the past years we figured the need to design 3 types of
-            deals/offers/packages/proposals according to your needs:"
+          title="Discover the right pack for you"
+          subTitle="We offer 3 tailored service packages designed to meet a variety of needs, lifestyles, and budgets. Whether you're looking for a solid design foundation, personalized guidance during implementation, or a fully managed, stress-free transformation, we’ve got you covered. Explore our offerings below to find the perfect fit for your project."
         />
-        <div class="flex flex-col gap-6 lg:flex-row pb-4">
+        <div class="flex gap-6 pb-4 overflow-x-auto no-scrollbar">
           <For each={proposals}>
             {(proposal) => <ProposalCard {...proposal} />}
           </For>

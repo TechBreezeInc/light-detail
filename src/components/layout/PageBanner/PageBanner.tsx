@@ -50,8 +50,6 @@ export const PageBanner = (props: Props) => {
 
   // Handle component mount and visibility changes
   onMount(() => {
-    console.log("mount", props.title);
-
     // Handle page visibility changes (tab switching, app switching)
     const handleVisibilityChange = () => {
       const video = videoRef();

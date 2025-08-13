@@ -59,12 +59,6 @@ const flowSteps = [
       "This stage is available only if you choose PROPOSAL 2/OFFER 2/DEAL 2 - we provide assistance and all the materials and information the site crew needs from us in order to make sure that things fall in place as we designed them.",
     img: "/img/steps/Step8.png",
   },
-  {
-    title: "Step 9",
-    subTitle: "PROJECT - PHOTO SESSION",
-    description: "",
-    img: "/img/steps/Step9.png",
-  },
 ];
 
 export const CollaborationFlow = () => {
