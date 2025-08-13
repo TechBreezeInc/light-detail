@@ -26,9 +26,12 @@ export const PageBanner = (props: Props) => {
   return (
     <section
       id={props.id}
-      class="w-full  lg:h-screen overflow-hidden relative page-banner"
+      class={clsx(
+        "w-full overflow-hidden relative page-banner",
+        !props.vid && "h-screen"
+      )}
     >
-      <div class="w-full lg:h-full lg:absolute top-0 left-0">
+      <div class={clsx("w-full top-0 left-0", !props.vid && "h-full absolute")}>
         <Show
           when={props.vid}
           fallback={
