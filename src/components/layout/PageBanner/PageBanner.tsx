@@ -113,7 +113,7 @@ export const PageBanner = (props: Props) => {
             </picture>
           }
         >
-          <div class="w-full h-[764px] lg:h-full relative overflow-hidden">
+          <div class="w-full h-[764px] lg:h-screen relative overflow-hidden">
             <video
               ref={handleVideoLoad}
               autoplay
