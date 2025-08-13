@@ -29,15 +29,15 @@ export default function Contact() {
           <div class="flex flex-col min-w-[300px]">
             <h2 class="text-4xl mb-2">LIGHT DETAIL</h2>
             <p>
-              <span class="text-gray-500">Mobil:</span> 0740 488 935
+              <span class="text-gray-500">Mobil:</span>+40740488935 /
+              +40751195354
             </p>
             <p>
               <span class="text-gray-500">E-mail:</span>{" "}
-              bianca.cimpean@lightdetail.eu
+              bianca.cimpean@lightdetail.eu / camelia.popa@lightdetail.eu
             </p>
             <p>
-              <span class="text-gray-500">Address:</span> Ludwing van Beethoven,
-              nr.29a
+              <span class="text-gray-500">Address:</span> str. Memorandumului 10
             </p>
             <p>
               <span class="text-gray-500">City:</span> Cluj-Napoca

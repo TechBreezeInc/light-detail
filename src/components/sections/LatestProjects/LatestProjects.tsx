@@ -30,7 +30,7 @@ export const LatestProjects = (props: Props) => {
                   PROJECTS
                 </h2>
                 <p class="text-right text-gray-500">
-                  Light Details's mission is to design and implement
+                  Lightdetail’s mission is to design and implement
                   functionally-aesthetically balanced spaces tailored to the
                   client's personality traits.
                 </p>
