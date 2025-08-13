@@ -4,6 +4,8 @@ export type Route = {
   path: string;
   img: string;
   imgMobile?: string;
+  vid?: string;
+  vidMobile?: string;
   title: string;
   subTitle: string;
   excludeFromNav?: boolean;
@@ -15,6 +17,8 @@ export const routes: Route[] = [
     label: "home",
     path: "/",
     img: "/img/cover.jpg",
+    vid: "/vid/home-landscape.webm",
+    vidMobile: "/vid/home-portrait.webm",
     title: "our|mission",
     subTitle:
       "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",

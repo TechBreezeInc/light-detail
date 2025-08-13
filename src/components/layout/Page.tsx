@@ -20,6 +20,8 @@ export const Page = (props: Props) => {
         title={route().title}
         subTitle={route().subTitle}
         imgMobile={route().imgMobile}
+        vid={route().vid}
+        vidMobile={route().vidMobile}
       />
       {props.children}
     </main>

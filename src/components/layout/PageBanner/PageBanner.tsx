@@ -6,6 +6,8 @@ type Props = {
   id: string;
   img: string;
   imgMobile?: string;
+  vid?: string;
+  vidMobile?: string;
   title: string;
   subTitle?: string;
 };
@@ -24,54 +26,77 @@ export const PageBanner = (props: Props) => {
   return (
     <section
       id={props.id}
-      class="w-full h-screen overflow-hidden relative page-banner"
+      class="w-full  lg:h-screen overflow-hidden relative page-banner"
     >
-      <div class="w-full h-full absolute top-0 left-0">
-        <picture>
-          <Show when={props.imgMobile}>
-            <source media="(max-width: 768px)" srcset={props.imgMobile} />
-          </Show>
-          <img
-            src={props.img}
-            alt="banner-image"
-            class="w-full h-full object-cover"
-          />
-        </picture>
-        <div class="absolute w-full h-full top-0 left-0 bg-black opacity-50" />
-      </div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[2px] max-w-full">
-        <div class="relative">
-          <div class="overflow-hidden overflowHandle">
-            <h1
-              class={clsx(
-                "uppercase text-center text-yellow-500 lg:text-8xl font-semibold text-shadow moveBannerTextTop",
-                getTextSize(splitTitle()[0])
-              )}
-            >
-              {splitTitle()[0]}
-            </h1>
-          </div>
-          <div class="bg-white w-full h-[4px] rounded-md scaleDivider" />
-          <div class="overflow-hidden overflowHandle">
-            <h1
-              class={clsx(
-                "uppercase text-center text-white lg:text-8xl font-semibold text-shadow z-10 relative moveBannerTextBottom",
-                getTextSize(splitTitle()[1])
-              )}
-            >
-              {splitTitle()[1]}
-            </h1>
-          </div>
-        </div>
+      <div class="w-full lg:h-full lg:absolute top-0 left-0">
+        <Show
+          when={props.vid}
+          fallback={
+            <picture>
+              <Show when={props.imgMobile}>
+                <source media="(max-width: 768px)" srcset={props.imgMobile} />
+              </Show>
+              <img
+                src={props.img}
+                alt="banner-image"
+                class="w-full h-full object-cover"
+              />
+            </picture>
+          }
+        >
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-contain lg:object-cover"
+          >
+            <Show when={props.vidMobile}>
+              <source media="(max-width: 768px)" src={props.vidMobile} />
+            </Show>
+            <source src={props.vid} />
+          </video>
+        </Show>
 
-        <Show when={props.subTitle}>
-          <div class="translate-y-[-0px] lg:translate-y-[-20px] fadeIn">
-            <p class="text-center text-white text-xl lg:text-2xl font-thin">
-              {props.subTitle}
-            </p>
-          </div>
+        <Show when={!props.vid}>
+          <div class="absolute w-full h-full top-0 left-0 bg-black opacity-50" />
         </Show>
       </div>
+      <Show when={!props.vid}>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[2px] max-w-full">
+          <div class="relative">
+            <div class="overflow-hidden overflowHandle">
+              <h1
+                class={clsx(
+                  "uppercase text-center text-yellow-500 lg:text-8xl font-semibold text-shadow moveBannerTextTop",
+                  getTextSize(splitTitle()[0])
+                )}
+              >
+                {splitTitle()[0]}
+              </h1>
+            </div>
+            <div class="bg-white w-full h-[4px] rounded-md scaleDivider" />
+            <div class="overflow-hidden overflowHandle">
+              <h1
+                class={clsx(
+                  "uppercase text-center text-white lg:text-8xl font-semibold text-shadow z-10 relative moveBannerTextBottom",
+                  getTextSize(splitTitle()[1])
+                )}
+              >
+                {splitTitle()[1]}
+              </h1>
+            </div>
+          </div>
+
+          <Show when={props.subTitle}>
+            <div class="translate-y-[-0px] lg:translate-y-[-20px] fadeIn">
+              <p class="text-center text-white text-xl lg:text-2xl font-thin">
+                {props.subTitle}
+              </p>
+            </div>
+          </Show>
+        </div>
+      </Show>
     </section>
   );
 };
