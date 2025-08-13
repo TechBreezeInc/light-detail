@@ -3,6 +3,7 @@ export type Route = {
   label: string;
   path: string;
   img: string;
+  imgMobile?: string;
   title: string;
   subTitle: string;
   excludeFromNav?: boolean;
@@ -22,7 +23,8 @@ export const routes: Route[] = [
     id: "about",
     label: "about us",
     path: "/about",
-    img: "/img/about-us-cover.jpg",
+    img: "/img/about-us-new.webp",
+    imgMobile: "/img/about-us-mobile.webp",
     title: "about|us",
     subTitle:
       "Duo of inspiration and collaboration in the form of a friendly partnership created to freely bring bold ideas into life.",
@@ -31,7 +33,7 @@ export const routes: Route[] = [
     id: "interior_design",
     label: "interior design",
     path: "/interior-design",
-    img: "/img/residential-new.jpg",
+    img: "/img/interior-design.webp",
     title: "interior design|portfolio",
     subTitle:
       "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
@@ -58,7 +60,8 @@ export const routes: Route[] = [
     id: "contact",
     label: "contact",
     path: "/contact",
-    img: "/img/contact.jpg",
+    img: "/img/contact-new.webp",
+    imgMobile: "/img/contact-mobile.webp",
     title: "contact|us",
     subTitle:
       "We design homes that mirrors and shelters each and every lifestyle.",

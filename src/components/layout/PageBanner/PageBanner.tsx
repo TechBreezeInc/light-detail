@@ -5,6 +5,7 @@ import { Show } from "solid-js";
 type Props = {
   id: string;
   img: string;
+  imgMobile?: string;
   title: string;
   subTitle?: string;
 };
@@ -26,11 +27,16 @@ export const PageBanner = (props: Props) => {
       class="w-full h-screen overflow-hidden relative page-banner"
     >
       <div class="w-full h-full absolute top-0 left-0">
-        <img
-          src={props.img}
-          alt="banner-image"
-          class="w-full h-full object-cover"
-        />
+        <picture>
+          <Show when={props.imgMobile}>
+            <source media="(max-width: 768px)" srcset={props.imgMobile} />
+          </Show>
+          <img
+            src={props.img}
+            alt="banner-image"
+            class="w-full h-full object-cover"
+          />
+        </picture>
         <div class="absolute w-full h-full top-0 left-0 bg-black opacity-50" />
       </div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[2px] max-w-full">

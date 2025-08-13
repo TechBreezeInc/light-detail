@@ -19,6 +19,7 @@ export const Page = (props: Props) => {
         img={route().img}
         title={route().title}
         subTitle={route().subTitle}
+        imgMobile={route().imgMobile}
       />
       {props.children}
     </main>
