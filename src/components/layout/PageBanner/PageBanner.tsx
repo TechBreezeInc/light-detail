@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import "./PageBanner.css";
-import { Show } from "solid-js";
+import { Show, onMount, createSignal } from "solid-js";
 
 type Props = {
   id: string;
@@ -14,6 +14,7 @@ type Props = {
 
 export const PageBanner = (props: Props) => {
   const splitTitle = () => props.title.split("|");
+  const [videoRef, setVideoRef] = createSignal<HTMLVideoElement>();
 
   const getTextSize = (text: string) => {
     if (text.length > 8) {
@@ -22,6 +23,55 @@ export const PageBanner = (props: Props) => {
 
     return "text-7xl";
   };
+
+  const handleVideoLoad = (video: HTMLVideoElement) => {
+    setVideoRef(video);
+
+    // Ensure video plays when loaded
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        // If autoplay fails, try again after a short delay
+        setTimeout(() => {
+          video.play().catch(() => {
+            // If still failing, we can't do much more
+          });
+        }, 100);
+      }
+    };
+
+    // Play immediately if possible
+    if (video.readyState >= 3) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo, { once: true });
+    }
+  };
+
+  // Handle page visibility changes to restart video
+  onMount(() => {
+    const handleVisibilityChange = () => {
+      const video = videoRef();
+      if (video && document.visibilityState === "visible") {
+        // Small delay to ensure the page is fully visible
+        setTimeout(() => {
+          if (video.paused) {
+            video.play().catch(() => {
+              // Ignore errors - some browsers block autoplay
+            });
+          }
+        }, 100);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  });
 
   return (
     <section
@@ -48,10 +98,12 @@ export const PageBanner = (props: Props) => {
           }
         >
           <video
+            ref={handleVideoLoad}
             autoplay
             muted
             loop
             playsinline
+            preload="metadata"
             class="w-full h-full object-contain lg:object-cover"
           >
             <Show when={props.vidMobile}>
