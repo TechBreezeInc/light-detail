@@ -115,7 +115,7 @@ export const PageBanner = (props: Props) => {
             loop
             playsinline
             preload="metadata"
-            class="w-full h-full object-contain lg:object-cover"
+            class="w-full h-[764px] lg:h-full object-contain lg:object-cover"
           >
             <Show when={props.vidMobile}>
               <source media="(max-width: 768px)" src={props.vidMobile} />
