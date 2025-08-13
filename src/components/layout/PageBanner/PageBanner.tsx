@@ -92,7 +92,12 @@ export const PageBanner = (props: Props) => {
         !props.vid && "h-screen"
       )}
     >
-      <div class={clsx("w-full", !props.vid && "h-full absolute top-0 left-0")}>
+      <div
+        class={clsx(
+          "w-full relative",
+          !props.vid && "h-full absolute top-0 left-0"
+        )}
+      >
         <Show
           when={props.vid}
           fallback={
@@ -108,20 +113,22 @@ export const PageBanner = (props: Props) => {
             </picture>
           }
         >
-          <video
-            ref={handleVideoLoad}
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            class="w-full min-h-[764px] lg:h-full lg:object-cover"
-          >
-            <Show when={props.vidMobile}>
-              <source media="(max-width: 768px)" src={props.vidMobile} />
-            </Show>
-            <source src={props.vid} />
-          </video>
+          <div class="w-full h-[764px] lg:h-full relative overflow-hidden">
+            <video
+              ref={handleVideoLoad}
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              class="w-full h-full object-cover absolute top-0 left-0"
+            >
+              <Show when={props.vidMobile}>
+                <source media="(max-width: 768px)" src={props.vidMobile} />
+              </Show>
+              <source src={props.vid} />
+            </video>
+          </div>
         </Show>
 
         <Show when={!props.vid}>
