@@ -7,7 +7,6 @@ export const Footer = () => {
       <div class="flex flex-col gap-3">
         <p class="font-bold">Portfolio</p>
         <A href="/interior-design">Interior Design</A>
-        <A href="/visualization">Visualizations</A>
       </div>
       <div class="flex flex-col gap-3">
         <p class="font-bold">Services</p>

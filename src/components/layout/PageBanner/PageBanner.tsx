@@ -31,7 +31,7 @@ export const PageBanner = (props: Props) => {
           alt="banner-image"
           class="w-full h-full object-cover"
         />
-        <div class="absolute w-full h-full top-0 left-0 bg-black opacity-60" />
+        <div class="absolute w-full h-full top-0 left-0 bg-black opacity-50" />
       </div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[2px] max-w-full">
         <div class="relative">

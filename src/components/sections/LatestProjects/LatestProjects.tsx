@@ -11,10 +11,6 @@ type Props = {
 export const LatestProjects = (props: Props) => {
   const [divRef, setDivRef] = createSignal<HTMLDivElement | null>(null);
 
-  createEffect(() => {
-    console.log(props.projects);
-  });
-
   const getProjectByIndex = (index: number) => props.projects[index] ?? {};
 
   return (

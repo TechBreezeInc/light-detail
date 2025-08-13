@@ -2,7 +2,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { onMount } from "solid-js";
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-console.log("apiKey", apiKey);
+
 const loader = new Loader({
   apiKey,
   version: "weekly",

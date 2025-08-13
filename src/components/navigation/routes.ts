@@ -49,7 +49,7 @@ export const routes: Route[] = [
     id: "services",
     label: "services",
     path: "/services",
-    img: "/img/services.png",
+    img: "/img/services_1.png",
     title: "our|services",
     subTitle:
       "We design homes that mirrors and shelters each and every lifestyle.",
