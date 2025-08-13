@@ -8,9 +8,7 @@ type Props = {
 };
 
 export const Page = (props: Props) => {
-  const route = createMemo(
-    () => routes.find((route) => route.id === props.id)!
-  );
+  const route = () => routes.find((route) => route.id === props.id)!;
 
   return (
     <main class="w-full flex flex-col relative">

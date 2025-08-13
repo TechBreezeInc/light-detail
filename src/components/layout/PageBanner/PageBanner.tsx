@@ -67,12 +67,11 @@ export const PageBanner = (props: Props) => {
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    // Cleanup
     onCleanup(() => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     });
   });
-
-  console.log(props.vid);
 
   return (
     <section
@@ -83,7 +82,21 @@ export const PageBanner = (props: Props) => {
       )}
     >
       <div class={clsx("w-full top-0 left-0", !props.vid && "h-full absolute")}>
-        <Show when={props.vid}>
+        <Show
+          when={props.vid}
+          fallback={
+            <picture>
+              <Show when={props.imgMobile}>
+                <source media="(max-width: 768px)" srcset={props.imgMobile} />
+              </Show>
+              <img
+                src={props.img}
+                alt="banner-image"
+                class="w-full h-full object-cover"
+              />
+            </picture>
+          }
+        >
           <video
             ref={handleVideoLoad}
             autoplay
