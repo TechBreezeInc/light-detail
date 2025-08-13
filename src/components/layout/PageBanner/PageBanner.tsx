@@ -92,7 +92,7 @@ export const PageBanner = (props: Props) => {
         !props.vid && "h-screen"
       )}
     >
-      <div class={clsx("w-full top-0 left-0", !props.vid && "h-full absolute")}>
+      <div class={clsx("w-full", !props.vid && "h-full absolute top-0 left-0")}>
         <Show
           when={props.vid}
           fallback={
