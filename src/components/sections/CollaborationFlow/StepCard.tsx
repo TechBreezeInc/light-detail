@@ -19,7 +19,7 @@ export const StepCard = (props: Props) => {
   return (
     <div
       class={clsx(
-        "flex flex-col mt-10 last:mb-32 lg:flex-row",
+        "flex flex-col mt-10 lg:flex-row",
         props.textPosition === StepCardTextPosition.RIGHT
           ? "lg:flex-row"
           : "lg:flex-row-reverse"
@@ -33,27 +33,32 @@ export const StepCard = (props: Props) => {
           </h3>
         </Show>
       </div>
-      <div class="mb-5 lg:mb-0 w-full h-32 lg:w-[150px] lg:h-auto lg:aspect-square overflow-hidden rounded-md shadow-md">
+      <div
+        class={clsx(
+          "mb-5 lg:mb-0 w-[60%] lg:w-[150px] overflow-hidden rounded-md shadow-md ",
+          props.textPosition === StepCardTextPosition.LEFT && "ml-auto lg:ml-0"
+        )}
+      >
         <img
           class="w-full h-full object-cover object-bottom lg:object-center"
           src={props.img}
         />
       </div>
-      <div class="flex-1 relative ">
+      <div class="lg:flex-1 relative h-[120px] lg:h-unset">
         <div
           class={clsx(
-            "lg:absolute bottom-0 left-0  w-full flex flex-col gap-3",
+            "absolute bottom-0 left-0  w-full flex flex-col gap-3",
             props.textPosition === StepCardTextPosition.RIGHT
-              ? "lg:pl-[70px]"
-              : "lg:pr-[70px] lg:text-right"
+              ? "pl-[70px]"
+              : "pr-[70px] text-right"
           )}
         >
           <p
             class={clsx(
-              "lg:absolute -top-10 lg:top-unset lg:bottom-[35px] text-3xl lg:-rotate-90 font-bold ",
+              "absolute bottom-[35px] text-3xl -rotate-90 font-bold ",
               props.textPosition === StepCardTextPosition.RIGHT
-                ? "lg:-left-[15px]"
-                : "lg:-right-[15px]"
+                ? "-left-[15px]"
+                : "-right-[15px]"
             )}
           >
             {props.title}
