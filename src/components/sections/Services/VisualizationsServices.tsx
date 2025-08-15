@@ -1,14 +1,38 @@
 import clsx from "clsx";
-import { createSignal } from "solid-js";
+import { createSignal, onMount, onCleanup } from "solid-js";
 import { GotToButton } from "~/components/buttons/GoToButton";
 
 export const VisualizationsServices = () => {
-  const [flip, setFlip] = createSignal(false);
+  const [flip, setFlip] = createSignal(true);
+  let sectionRef!: HTMLDivElement;
+
+  onMount(() => {
+    if (!sectionRef) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setFlip(false);
+          } else {
+            setFlip(true);
+          }
+        });
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    observer.observe(sectionRef);
+
+    onCleanup(() => observer.disconnect());
+  });
 
   return (
     <section
       onClick={() => setFlip(!flip())}
-      class="w-full flex relative h-screen max-h-[600px] overflow-hidden lg:px-48 lg:mb-28 cursor-pointer"
+      class="mt-12 lg:mt-0 w-full flex relative h-screen max-h-[600px] overflow-hidden lg:px-48 lg:mb-20 cursor-pointer"
     >
       <div
         class={clsx(
@@ -40,7 +64,10 @@ export const VisualizationsServices = () => {
         </div>
       </div>
       <div class="flex flex-col mx-auto px-6 flex-1 max-w-6xl overflow-hidden relative justify-end ">
-        <div class="flex flex-col w-full bg-gray-100 p-6 gap-4 shadow-md mb-4 rounded-md max-w-[500px]">
+        <div
+          ref={sectionRef}
+          class="flex flex-col w-full bg-gray-100 p-6 gap-4 shadow-md mb-4 rounded-md max-w-[500px]"
+        >
           <h3 class="text-4xl">VISUALIZATIONS</h3>
           <p>
             We create CG ART visualizations for residential and commercial
@@ -54,11 +81,7 @@ export const VisualizationsServices = () => {
             partner with.
           </p>
           <div class="pl-[35px]">
-            <GotToButton
-              to="/visualization"
-              label="SEE VISUALIZATIONS PORTFOLIO"
-              selected
-            />
+            <GotToButton to="/contact" label="CONTACT US" selected />
           </div>
         </div>
       </div>
