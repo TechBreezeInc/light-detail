@@ -33,6 +33,16 @@ export default createHandler(() => (
           <link rel="preload" as="image" href="/img/visualisation1.jpg"></link>
           <link rel="preload" as="image" href="/img/services.png"></link>
           <link rel="preload" as="image" href="/img/contact.jpg"></link>
+          <script src="/script/meta.js" />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style="display:none"
+              src="https://www.facebook.com/tr?id=1287130029248563&ev=PageView&noscript=1"
+            />
+          </noscript>
+
           {assets}
         </head>
         <body>
