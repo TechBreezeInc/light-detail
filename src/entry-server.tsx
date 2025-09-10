@@ -39,7 +39,7 @@ export default createHandler(() => (
               height="1"
               width="1"
               style="display:none"
-              src="https://www.facebook.com/tr?id=1287130029248563&ev=PageView&noscript=1"
+              src="https://www.facebook.com/tr?id=4104641113138375&ev=PageView&noscript=1"
             />
           </noscript>
 
