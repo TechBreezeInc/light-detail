@@ -43,6 +43,12 @@ export default createHandler(() => (
             />
           </noscript>
 
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=AW-17547056259"
+          ></script>
+          <script src="/script/google.js"></script>
+
           {assets}
         </head>
         <body>
