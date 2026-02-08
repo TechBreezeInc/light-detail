@@ -3,6 +3,7 @@ import { For, createSignal } from "solid-js";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
 import { StaffCard } from "~/components/sections/Staff/StaffCard";
+import { Seo } from "~/components/seo/Seo";
 
 import { getStaff } from "~/resources/staff";
 
@@ -17,6 +18,12 @@ export default function About() {
 
   return (
     <Page id="about">
+      <Seo
+        title="About Us | Light Detail Studio - Interior Design Cluj-Napoca"
+        description="Echipa design interior Cluj — cunoaste echipa Light Detail Studio. Duo de inspiratie si colaborare in design interior Cluj-Napoca."
+        keywords="echipa design interior Cluj, despre noi Light Detail, interior designers Cluj-Napoca"
+        path="/about"
+      />
       <div class="flex relative overflow-hidden lg:px-60">
         <AnimatedCircle divRef={divRef1} options={{ threshold: 0.3 }} />
         <AnimatedCircle

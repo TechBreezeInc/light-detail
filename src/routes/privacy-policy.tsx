@@ -1,12 +1,18 @@
 import { createSignal } from "solid-js";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
+import { Seo } from "~/components/seo/Seo";
 
 export default function PrivacyPolicy() {
   const [divRef1, setDivRef1] = createSignal<HTMLDivElement | null>(null);
 
   return (
     <Page id="privacyPolicy">
+      <Seo
+        title="Privacy Policy | Light Detail Studio"
+        description="Privacy Policy for Light Detail Studio. Learn how we collect, use, and protect your personal information."
+        path="/privacy-policy"
+      />
       <div class="flex relative overflow-hidden lg:px-60">
         <AnimatedCircle divRef={divRef1} options={{ threshold: 0.3 }} />
         <div

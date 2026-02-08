@@ -3,6 +3,7 @@ import { Show } from "solid-js";
 import { ProjectPage } from "~/components/sections/ProjectPage";
 import { getProjectsById } from "~/resources/projects";
 import { Project } from "~/types";
+import { Seo } from "~/components/seo/Seo";
 
 export const route = {
   load: (props: { params: { id: string } }) => {
@@ -19,6 +20,12 @@ export default function InteriorDesignProject(props: {
 
   return (
     <Show when={data()}>
+      <Seo
+        title={`${data()!.title} | Interior Design - Light Detail Studio`}
+        description={data()!.description || `${data()!.title} — interior design project by Light Detail Studio Cluj-Napoca.`}
+        path={`/interior-design/${props.params.id}`}
+        ogImage={data()!.coverImageUrl}
+      />
       <ProjectPage project={data()!} />
     </Show>
   );

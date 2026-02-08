@@ -37,6 +37,7 @@ export const ProjectPage = (props: Props) => {
                   onClick={() => setPreviewImg(img)}
                   class="w-full h-full object-cover cursor-pointer"
                   src={img}
+                  alt={`${props.project.title} - interior design photo`}
                 />
               </div>
             )}

@@ -2,6 +2,7 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Show, Suspense } from "solid-js";
+import { MetaProvider } from "@solidjs/meta";
 import { DesktopMenu } from "./components/navigation/DesktopMenu";
 import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/Header";
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <Router
       root={(props) => (
-        <>
+        <MetaProvider>
           <Header />
           <Suspense
             fallback={<section class="w-screen h-screen page-banner" />}
@@ -32,7 +33,7 @@ export default function App() {
             <Footer />
           </div>
           <ImgPreview />
-        </>
+        </MetaProvider>
       )}
     >
       <FileRoutes />

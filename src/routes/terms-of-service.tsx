@@ -1,12 +1,18 @@
 import { createSignal } from "solid-js";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { Page } from "~/components/layout/Page";
+import { Seo } from "~/components/seo/Seo";
 
 export default function TermOfService() {
   const [divRef1, setDivRef1] = createSignal<HTMLDivElement | null>(null);
 
   return (
     <Page id="termsOfService">
+      <Seo
+        title="Terms of Service | Light Detail Studio"
+        description="Terms of Service for Light Detail Studio. Read the terms governing the use of our interior design services."
+        path="/terms-of-service"
+      />
       <div class="flex relative overflow-hidden lg:px-60">
         <AnimatedCircle divRef={divRef1} options={{ threshold: 0.3 }} />
         <div

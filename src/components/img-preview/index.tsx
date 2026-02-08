@@ -20,6 +20,7 @@ export const ImgPreview = () => {
           <img
             class="w-full h-full object-contain"
             src={currentPreviewImg() ?? undefined}
+            alt="Full size preview"
           />
         </div>
       </Show>

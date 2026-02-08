@@ -105,7 +105,7 @@ export const PageBanner = (props: Props) => {
               </Show>
               <img
                 src={props.img}
-                alt="banner-image"
+                alt={`${props.title.replace("|", " ")} - Light Detail Studio`}
                 class="w-full h-full object-cover"
               />
             </picture>

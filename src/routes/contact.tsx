@@ -7,6 +7,7 @@ const GoogleMaps = clientOnly(() => import("~/components/google-maps"));
 import { getStaff } from "~/resources/staff";
 import { AnimatedCircle } from "~/components/decorations/AnimatedCircle";
 import { createSignal } from "solid-js";
+import { Seo } from "~/components/seo/Seo";
 
 export const route = {
   load: () => getStaff(),
@@ -17,6 +18,12 @@ export default function Contact() {
 
   return (
     <Page id="contact">
+      <Seo
+        title="Contact | Light Detail Studio - Interior Design Cluj-Napoca"
+        description="Contacteaza Light Detail Studio — design interior Cluj-Napoca. Programeaza o consultatie pentru amenajari interioare. Memorandumului 10, Cluj-Napoca."
+        keywords="contact design interior Cluj, Light Detail Studio contact, design interior Cluj-Napoca"
+        path="/contact"
+      />
       <Section
         decorations={
           <AnimatedCircle divRef={divRef} options={{ threshold: 0.3 }} />
