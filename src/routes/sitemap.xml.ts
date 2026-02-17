@@ -1,7 +1,7 @@
 import { server } from "~/resources/server";
 import { Project } from "~/types";
 
-const BASE_URL = "https://lightdetail.eu";
+const BASE_URL = "https://www.lightdetail.eu";
 
 const staticRoutes = [
   { path: "/", priority: "1.0" },
@@ -17,7 +17,7 @@ export async function GET() {
   let projects: Project[] = [];
   try {
     const response = await server.get<{ projects?: Project[] }>(
-      "/projects/all"
+      "/projects/all",
     );
     if (response.data?.projects) {
       projects = response.data.projects;
@@ -31,7 +31,7 @@ export async function GET() {
       (route) => `  <url>
     <loc>${BASE_URL}${route.path}</loc>
     <priority>${route.priority}</priority>
-  </url>`
+  </url>`,
     )
     .join("\n");
 
@@ -40,7 +40,7 @@ export async function GET() {
       (project) => `  <url>
     <loc>${BASE_URL}/interior-design/${project.id}</loc>
     <priority>0.7</priority>
-  </url>`
+  </url>`,
     )
     .join("\n");
 
