@@ -1,4 +1,3 @@
-import { APIEvent } from "@solidjs/start/server";
 import { server } from "~/resources/server";
 import { Project } from "~/types";
 
@@ -14,7 +13,7 @@ const staticRoutes = [
   { path: "/terms-of-service", priority: "0.3" },
 ];
 
-export async function GET({ request }: APIEvent) {
+export async function GET() {
   let projects: Project[] = [];
   try {
     const response = await server.get<{ projects?: Project[] }>(
