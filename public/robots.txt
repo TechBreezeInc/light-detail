@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lightdetail.eu/sitemap.xml
+Sitemap: https://www.lightdetail.eu/sitemap.xml
