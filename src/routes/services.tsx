@@ -52,7 +52,7 @@ export default function Services() {
       >
         <SectionHeader
           title="Discover the right pack for you"
-          subTitle="We offer 3 tailored service packages designed to meet a variety of needs, lifestyles, and budgets. Whether you're looking for a solid design foundation, personalized guidance during implementation, or a fully managed, stress-free transformation, we’ve got you covered. Explore our offerings below to find the perfect fit for your project."
+          subTitle="We offer 3 tailored interior design packages, designed to meet a variety of needs, lifestyles, and budgets. Whether you’re looking for a solid design foundation, personalized guidance during implementation, or a fully managed, stress-free transformation, we’ve got you covered. Explore our offerings below to find the perfect fit for your project. Lets have a chat at our office in Cluj-Napoca or give as a call."
         />
         <div class="flex gap-6 pb-4 overflow-x-auto no-scrollbar">
           <For each={proposals}>

@@ -49,6 +49,7 @@ export const VisualizationsServices = () => {
           <img
             class="w-full h-full object-cover"
             src="/img/visualisation1.jpg"
+            alt="3D visualization interior design Cluj-Napoca"
           />
         </div>
         <div
@@ -60,6 +61,7 @@ export const VisualizationsServices = () => {
           <img
             class="w-full h-full object-cover"
             src="/img/visualisation2.jpg"
+            alt="Design interior vizualizare 3D Cluj-Napoca"
           />
         </div>
       </div>

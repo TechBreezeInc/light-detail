@@ -45,6 +45,7 @@ export const WorkFlow = () => {
             <div class="flex gap-6 flex-col-reverse lg:flex-row">
               <img
                 src={img}
+                alt={`${title} — interior design Cluj-Napoca`}
                 class="object-cover w-full lg:w-52 h-52 shadow-md"
               />
               <div class="flex flex-col pt-3 gap-3">
@@ -68,10 +69,11 @@ export const WorkFlow = () => {
             WE WORK
           </h3>
           <p class="text-gray-500">
-            A strategic playground of shapes and colors chosen with care for the
-            environment and economical sustainability, working together with
-            local providers as much as possible. Designed homes that mirrors and
-            shelters each and every lifestyle.
+            Our interior design process is a strategic playground of shapes and
+            colors chosen with care for the environment and economical
+            sustainability, working together with local providers as much as
+            possible. Designed homes that mirrors and shelters each and every
+            lifestyle.
           </p>
           <div class="hidden lg:flex justify-end mt-12">
             <GotToButton

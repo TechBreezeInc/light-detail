@@ -59,6 +59,11 @@ export default function Contact() {
             LET`S GET TO KNOW EACH OTHER <br />{" "}
             <span class="text-brandYellow">SEND US</span> AN EMAIL
           </h2>
+          <p class="text-gray-500 mt-4">
+            Looking for interior design in Cluj-Napoca? Light Detail Studio
+            offers personalized design interior services — from concept to
+            implementation.
+          </p>
         </div>
         <ContactForm />
       </Section>

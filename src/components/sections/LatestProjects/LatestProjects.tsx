@@ -30,9 +30,10 @@ export const LatestProjects = (props: Props) => {
                   PROJECTS
                 </h2>
                 <p class="text-right text-gray-500">
-                  Lightdetail’s mission is to design and implement
+                  Light Detail Studio is an interior design studio based in
+                  Cluj-Napoca, designing and implementing
                   functionally-aesthetically balanced spaces tailored to the
-                  client's personality traits.
+                  client’s personality traits.
                 </p>
               </div>
             </div>

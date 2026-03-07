@@ -21,7 +21,7 @@ export const routes: Route[] = [
     vidMobile: "/vid/home-portrait.webm",
     title: "our|mission",
     subTitle:
-      "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
+      "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits. Interior design Cluj-Napoca.",
   },
   {
     id: "about",
@@ -31,7 +31,7 @@ export const routes: Route[] = [
     imgMobile: "/img/about-us-mobile.webp",
     title: "about|us",
     subTitle:
-      "Duo of inspiration and collaboration in the form of a friendly partnership created to freely bring bold ideas into life.",
+      "A duo of inspiration and collaboration — an interior design studio in Cluj-Napoca, bringing bold ideas into life.",
   },
   {
     id: "interior_design",
@@ -40,7 +40,7 @@ export const routes: Route[] = [
     img: "/img/interior-design.webp",
     title: "interior design|portfolio",
     subTitle:
-      "Light Detail Studio's mission is to design and implement functionally-aesthetically balanced spaces tailored to the client's personality traits.",
+      "Explore our interior design projects in Cluj-Napoca — functionally-aesthetically balanced spaces tailored to the client's personality.",
   },
   // {
   //   id: "visualization",
@@ -58,7 +58,7 @@ export const routes: Route[] = [
     img: "/img/services_1.png",
     title: "our|services",
     subTitle:
-      "We design homes that mirrors and shelters each and every lifestyle.",
+      "Design interior Cluj-Napoca — we design homes that mirror and shelter each and every lifestyle.",
   },
   {
     id: "contact",
@@ -68,7 +68,7 @@ export const routes: Route[] = [
     imgMobile: "/img/contact-mobile.webp",
     title: "contact|us",
     subTitle:
-      "We design homes that mirrors and shelters each and every lifestyle.",
+      "Get in touch with our interior design team in Cluj-Napoca.",
   },
   {
     id: "termsOfService",
